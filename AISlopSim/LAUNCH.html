@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shuttle + ISS Simulator</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+            font-family: 'Courier New', monospace;
+        }
+        
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #hud {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 255, 0, 0.1);
+            color: #0f0;
+            padding: 15px;
+            border: 2px solid #0f0;
+            font-size: 14px;
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 0 10px #0f0;
+            width: 250px;
+        }
+        
+        .hud-item {
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .hud-label {
+            font-weight: bold;
+        }
+        
+        .hud-value {
+            text-align: right;
+        }
+        
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 255, 0, 0.1);
+            color: #0f0;
+            padding: 15px;
+            border: 2px solid #0f0;
+            font-size: 12px;
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 0 10px #0f0;
+            width: 300px;
+        }
+        
+        .control-item {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="hud">
+        <div class="hud-item">
+            <span class="hud-label">ALTITUDE:</span>
+            <span class="hud-value" id="altitude">0 km</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">SPEED (km/s):</span>
+            <span class="hud-value" id="speed-kms">0.00</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">SPEED (km/h):</span>
+            <span class="hud-value" id="speed-kmh">0</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">DISTANCE ISS:</span>
+            <span class="hud-value" id="distance-iss">0 km</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">FPS:</span>
+            <span class="hud-value" id="fps">60</span>
+        </div>
+    </div>
+    
+    <div id="controls">
+        <div style="margin-bottom: 10px; border-bottom: 1px solid #0f0; padding-bottom: 10px;">CONTROLS</div>
+        <div class="control-item">W/A/S/D - Move shuttle</div>
+        <div class="control-item">Space - Accelerate up</div>
+        <div class="control-item">Ctrl - Decelerate down</div>
+        <div class="control-item">Mouse - Look around</div>
+        <div class="control-item">Left Click - Lock mouse</div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/physics.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/shuttle.js"></script>
+    <script src="js/iss.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

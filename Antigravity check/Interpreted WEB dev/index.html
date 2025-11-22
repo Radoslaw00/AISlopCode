@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Composition Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    
+    <main class="container glass">
+        <header>
+            <h1>File Composition Analyzer</h1>
+            <p>Drag & drop files or folders to analyze</p>
+        </header>
+
+        <div id="drop-zone" class="drop-zone">
+            <div class="icon">📂</div>
+            <p>Drop files here</p>
+        </div>
+
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Analyzing...</p>
+        </div>
+
+        <div id="results" class="hidden">
+            <div class="stats-grid">
+                <div class="stat-card glass">
+                    <h3>Total Files</h3>
+                    <p id="total-files">0</p>
+                </div>
+                <div class="stat-card glass">
+                    <h3>Total Lines</h3>
+                    <p id="total-lines">0</p>
+                </div>
+                <div class="stat-card glass">
+                    <h3>Total Size</h3>
+                    <p id="total-size">0 MB</p>
+                </div>
+            </div>
+
+            <div class="charts-container">
+                <div class="chart-wrapper glass">
+                    <h3>Language Composition (Files)</h3>
+                    <canvas id="filesChart"></canvas>
+                </div>
+                <div class="chart-wrapper glass">
+                    <h3>Code Volume (Lines)</h3>
+                    <canvas id="linesChart"></canvas>
+                </div>
+            </div>
+
+            <div class="file-list glass">
+                <h3>Details</h3>
+                <ul id="file-details-list"></ul>
+            </div>
+            
+            <button id="reset-btn" class="glass-btn">Analyze More</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
